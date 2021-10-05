@@ -15,6 +15,7 @@ public class Main {
             if(substr.equals(needle))
                 result.add(i);
         }
+        return result;
     }
     public static int tapeEquilibrium(int[] A){
         int N = A.length;
