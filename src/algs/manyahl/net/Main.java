@@ -12,9 +12,10 @@ public class Main {
         String substr="";
         for(int i=0;i<haystackLen-2;i++){
             substr=haystack.substring(i,i + needleLen);
-            if(substr.equals(needle)){
+            if(substr.equals(needle))
                 result.add(i);
-            }
+        }
+    }
     public static int tapeEquilibrium(int[] A){
         int N = A.length;
         int result=Integer.MAX_VALUE;
