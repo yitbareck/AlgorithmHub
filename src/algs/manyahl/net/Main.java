@@ -47,6 +47,22 @@ public class Main {
         }
         return n;
     }
+    public static int countBinaryGaps(int N) {
+        int result=0;
+        int prev=0;
+        int diff;
+        int length=(int)(Math.ceil(Math.log(N)/Math.log(2)));
+        int[] binary=new int[length];
+        for(int i=length-1;i>-1;i--,N/=2) binary[i]=N%2;
+        for(int i=0;i<length;i++){
+            if(binary[i]==1){
+                diff=i-prev;
+                result=diff>1 && diff>result?diff-1:result;
+                prev=i;
+            }
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         System.out.println(specialString("aabaabac"));
